@@ -59,6 +59,7 @@
 	<node name="grippers_remapper" pkg="yumi_hw" type="gazebo_grippers_remap.py" />
 
 
+
 	<!-- moveit setting -->
 	<param name="robot_description_semantic" textfile="$(find yumi_moveit_config)/config/yumi.srdf" />
 	<group ns="robot_description_planning">
@@ -94,6 +95,8 @@
 		<param name="start_state_max_bounds_error" value="0.1" />
 		<rosparam command="load" file="$(find yumi_moveit_config)/config/ompl_planning.yaml"/>
 	</node>
+
+	<include file="$(find lift_robot_control)/launch/lift_robot_control_v_yumi.launch"/>
 
 	<!-- Show robot in Rviz   -->
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find yumi_description)/yumi.rviz"/>
