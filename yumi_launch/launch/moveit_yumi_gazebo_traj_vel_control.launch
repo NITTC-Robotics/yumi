@@ -95,6 +95,8 @@
 		<rosparam command="load" file="$(find yumi_moveit_config)/config/ompl_planning.yaml"/>
 	</node>
 
+	<include file="$(find lift_robot_control)/launch/lift_robot_control_v_yumi.launch"/>
+
 	<!-- Show robot in Rviz   -->
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find yumi_description)/yumi.rviz"/>
 
