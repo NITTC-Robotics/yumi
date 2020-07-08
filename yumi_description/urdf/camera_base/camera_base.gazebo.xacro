@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <gazebo reference="camera_base_link">
+      <selfCollide>false</selfCollide>
+      <mu1 value="0.05" />
+      <mu2 value="0.05" />
+    </gazebo>
+
+    <gazebo reference="camera_base_2_link">
+    <selfCollide>false</selfCollide>
+    <mu1 value="0.05" />
+    <mu2 value="0.05" />
+    </gazebo>
+
+</robot>
