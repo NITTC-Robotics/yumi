@@ -35,7 +35,7 @@
 		</link>
 
 		<joint name="camera_base_link_joint_2" type="fixed">
-			<origin xyz="0.075 0.0 0" rpy="0.0 0 0.0"/>
+			<origin xyz="0.075 0.0 0" rpy="0.0 ${angle} 0.0"/>
 			<parent link="camera_base_link"/>
 			<child link="camera_base_2_link"/>
 		</joint>
@@ -45,16 +45,16 @@
 				<geometry>
 					<mesh filename="package://yumi_description/meshes/camera_base/yumi_camera_base_2.STL"/>
 				</geometry>
-				<origin rpy="0 ${angle} 0" xyz="0 0 0" />
+				<origin rpy="0 0 0" xyz="0 0 0" />
 			</visual>
 			<collision>
 				<geometry>
 					<box size="0.25 0.015 0.015"/>
 				</geometry>
-				<origin xyz="0.125 0 0" rpy="0 ${angle} 0"/>
+				<origin xyz="0.125 0 0" rpy="0 0 0"/>
 			</collision>
 			<inertial>
-				<origin xyz="0.0 0.0 0.0" rpy="0.0 ${angle} 0.0"/>
+				<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
 				<xacro:box_inertial mass="0.25" height="0.25" width="0.015" depth="0.015"/>
 			</inertial>
 		</link>

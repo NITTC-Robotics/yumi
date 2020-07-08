@@ -11,8 +11,10 @@
   <!-- Import Gazebo plugins -->
   <xacro:include filename="$(find yumi_description)/urdf/Gazebo/gazebo.urdf.xacro"/>
 
-    <xacro:include filename="$(find  lift_robot_description)/robots/lift_robot.urdf_origin.xacro"/>
+  <xacro:include filename="$(find  lift_robot_description)/robots/lift_robot.urdf_origin.xacro"/>
   <xacro:include filename="$(find yumi_description)/urdf/camera_base/camera_base.urdf.xacro"/>
+
+  <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro" />
 
 
   <xacro:property name="yumi_setup" value="$(arg yumi_setup)" />
@@ -51,5 +53,9 @@
 <xacro:camera_base parent="yumi_base_link" angle="${- PI/4}">
   <origin xyz="-0.025 0.0 0.475 " rpy="0  0 0" />
 </xacro:camera_base>
+
+<xacro:sensor_d435 parent="camera_base_2_link" >
+  <origin xyz="0.1 0 -0.02" rpy="0 ${PI/2} 0"/>
+</xacro:sensor_d435>
 
 </robot>
