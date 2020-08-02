@@ -50,12 +50,12 @@
     <origin xyz="0 0 0.007" rpy="0 0 ${PI}" />
   </xacro:yumi_servo_gripper>
 
-<xacro:camera_base parent="yumi_base_link" angle="${- PI/4}">
+<xacro:camera_base parent="yumi_base_link" angle="${-PI/3}">
   <origin xyz="-0.025 0.0 0.475 " rpy="0  0 0" />
 </xacro:camera_base>
 
 <xacro:sensor_zed parent="camera_base_2_link" >
-  <origin xyz="0.1 0 -0.02" rpy="0 ${PI/2} 0"/>
+  <origin xyz="0.15 0 -0.03" rpy="0 ${PI/2} 0"/>
 </xacro:sensor_zed>
 
 </robot>
