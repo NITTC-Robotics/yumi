@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="line world">
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <model name="line">
+      <include>
+        <uri>model://line</uri>
+      </include>
+      <pose>3 -1.5 0 0 0 0</pose>
+    </model>
+
+    <model name="ground_plane">
+      <include>
+        <uri>model://ground_plane</uri>
+      </include>
+
+      <joint name='ground_joint' type='fixed'>
+        <parent>ground_plane::link</parent>
+        <child>line::link</child>
+      </joint>
+    </model>
+  </world>
+</sdf>

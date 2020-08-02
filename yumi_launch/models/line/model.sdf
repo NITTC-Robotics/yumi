@@ -1,0 +1,36 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+<model name="line">
+  <pose>0 0 0 0 0 0</pose>
+    <link name="link">
+      <inertial>
+        <pose>-0.5 1.5 0.058 0 0 0</pose>
+        <inertia>
+          <ixx>107465143958</ixx>
+          <ixy>0</ixy>
+          <ixz>-7337455</ixz>
+          <iyy>686955562688</iyy>
+          <iyz>0</iyz>
+          <izz>2602865691630</izz>
+        </inertia>
+        <mass>750.307</mass>
+      </inertial>
+      <collision name="collision">
+        <pose>0 0 1 0 0 1.57</pose>
+        <geometry>
+          <mesh>
+            <uri>model://line/line_demo.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose>0 0 1 0 0 1.57</pose>
+        <geometry>
+          <mesh>
+            <uri>model://line/line_demo.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
