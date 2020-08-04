@@ -4,13 +4,9 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
-        - /Global Options1
-        - /Status1
         - /RobotModel1/Links1
         - /TF1/Tree1
-        - /PointCloud21
-        - /MotionPlanning1
-        - /Image1
+        - /MarkerArray1
       Splitter Ratio: 0.6642069816589355
     Tree Height: 289
   - Class: rviz/Selection
@@ -874,6 +870,13 @@ Visualization Manager:
         cluster: true
       Queue Size: 100
       Value: true
+    - Class: rviz/Axes
+      Enabled: true
+      Length: 0.5
+      Name: Axes
+      Radius: 0.019999999552965164
+      Reference Frame: base_footprint
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 200; 200; 200
@@ -902,25 +905,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 4.686610221862793
+      Distance: 1.7975767850875854
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.7677004337310791
-        Y: 0.6197924613952637
-        Z: -0.855526328086853
+        X: 0.2831844687461853
+        Y: -0.09006157517433167
+        Z: 0.6904880404472351
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.48479709029197693
+      Pitch: 0.634796679019928
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.370307445526123
+      Yaw: 3.000296115875244
     Saved: ~
 Window Geometry:
   Displays:
