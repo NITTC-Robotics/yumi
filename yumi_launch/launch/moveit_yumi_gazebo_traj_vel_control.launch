@@ -54,7 +54,7 @@
 
 	<!-- Joint state and robot state publisher calls -->
     <node name="yumi_joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
-        <rosparam param="source_list">["/yumi/joint_states", "/yumi/gripper_states"]</rosparam>
+        <rosparam param="source_list">["/yumi/joint_states", "/yumi/gripper_states", "/yumi/con1/joint_states", "/yumi/con2/joint_states", "/yumi/con3/joint_states"]</rosparam>
     </node>
     <node name="yumi_robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
 	<node name="grippers_remapper" pkg="yumi_hw" type="gazebo_grippers_remap.py" />
