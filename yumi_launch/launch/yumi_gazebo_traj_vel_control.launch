@@ -41,7 +41,6 @@
 	<arg name="debug" default="false"/>
 	<arg unless="$(arg debug)" name="launch_prefix" value="" />
 	<arg if="$(arg debug)" name="launch_prefix" value="gdb --ex run --args" />
-	
 
 	<!-- Call Gazebo -->
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
