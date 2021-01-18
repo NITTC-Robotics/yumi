@@ -11,7 +11,7 @@
   <!-- Import Gazebo plugins -->
   <xacro:include filename="$(find yumi_description)/urdf/Gazebo/gazebo.urdf.xacro"/>
 
-  <xacro:include filename="$(find  lift_robot_description)/robots/lift_robot_origin_old.urdf.xacro"/>
+  <xacro:include filename="$(find  lift_robot_description)/robots/2_wheeled_4_steer_robot.urdf.xacro"/>
   <xacro:include filename="$(find yumi_description)/urdf/camera_base/camera_base.urdf.xacro"/>
 
   <xacro:include filename="$(find zed_wrapper)/urdf/zed.urdf.xacro" />

@@ -97,10 +97,8 @@
 	</node>
 
 	<!-- ros_control    -->
-	<include file="$(find lift_robot_control)/launch/lift_robot_control_v_yumi.launch"/>
-	
-	<!--  Control robot by using joycon   -->
-	<include file="$(find lift_robot_control)/launch/joy_control_yumi.launch"/>
+	<include file="$(find lift_robot_control)/launch/2_wheeled_4_steer_robot_control.launch"/>
+	<node name="control_ik_k"  pkg="lift_robot_control" type="control_ik_k"/>
 
 	<!-- Show robot in Rviz   -->
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find yumi_description)/yumi.rviz"/>
