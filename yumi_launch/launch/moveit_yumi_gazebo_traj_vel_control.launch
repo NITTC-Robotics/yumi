@@ -2,7 +2,9 @@
 <launch> 
 
 	<arg name="name" default="yumi" doc="The robot name. Ensure this is the same name you give to the arm in the urdf instance."/>
-	
+	<arg name="use_joy" default="true"/>
+	<arg name="rviz" default="true"/>
+
 	<!-- Load joint controller configurations from YAML file to parameter server -->
 	<rosparam file="$(find yumi_control)/config/traj_controllers.yaml" command="load" ns="/yumi"/>
 	<rosparam file="$(find yumi_control)/config/gripper_controllers.yaml" command="load" ns="/yumi"/>
@@ -98,9 +100,16 @@
 
 	<!-- ros_control    -->
 	<include file="$(find lift_robot_control)/launch/2_wheeled_4_steer_robot_control.launch"/>
-	<node name="control_ik_k"  pkg="lift_robot_control" type="control_ik_k"/>
+	
+	<node name="control_ik_k"  pkg="lift_robot_control" type="control_ik_k" output="screen"/>
+
+	<node pkg="joy" type="joy_node" name="joy_node" if="$(arg use_joy)" >
+		<param name="dev" value="/dev/input/js0" />
+	</node>
+
+    <node  pkg="phidgets_motor_control" type="pub_cmd_vel" name = "pub_cmd_vel" if="$(arg use_joy)"/>
 
 	<!-- Show robot in Rviz   -->
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find yumi_description)/yumi.rviz"/>
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find yumi_description)/yumi.rviz" if="$(arg rviz)"/>
 
 </launch>
