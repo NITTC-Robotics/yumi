@@ -101,7 +101,7 @@
 	<!-- ros_control    -->
 	<include file="$(find lift_robot_control)/launch/2_wheeled_4_steer_robot_control.launch"/>
 	
-	<node name="control_ik_k"  pkg="lift_robot_control" type="control_ik_k" output="screen"/>
+	<node name="control_ik_k"  pkg="lift_robot_control" type="control_ik_k" />
 
 	<node pkg="joy" type="joy_node" name="joy_node" if="$(arg use_joy)" >
 		<param name="dev" value="/dev/input/js0" />

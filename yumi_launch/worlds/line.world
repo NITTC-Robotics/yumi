@@ -5,22 +5,33 @@
       <uri>model://sun</uri>
     </include>
 
-    <model name="line">
-      <include>
-        <uri>model://line</uri>
-      </include>
-      <pose>3 -1.5 0 0 0 0</pose>
+    <model name="willowgarage">
+      <static>true</static>
+      <pose>-6.33625 -2.90857  -0.01 0 0 0</pose>
+      <link name="walls">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>model://willowgarage/meshes/willowgarage_collision.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>model://willowgarage/meshes/willowgarage_visual.dae</uri>
+            </mesh>
+          </geometry>
+          <cast_shadows>false</cast_shadows>
+        </visual>
+      </link>
     </model>
 
     <model name="ground_plane">
       <include>
         <uri>model://ground_plane</uri>
       </include>
-
-      <joint name='ground_joint' type='fixed'>
-        <parent>ground_plane::link</parent>
-        <child>line::link</child>
-      </joint>
     </model>
+
   </world>
 </sdf>
