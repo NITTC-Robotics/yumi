@@ -58,10 +58,12 @@
 		<node pkg="topic_tools" type="relay" name="right_joints_relay" args="/right_arm/joint_states /joint_states"/>
 	</group>
 
-
-	<node required="true" name="yumi_gripper" pkg="yumi_hw" type="yumi_gripper_node" respawn="false" ns="/yumi" output="screen">
-		<param name="ip" value="$(arg robot_ip)"/>
-	</node>
+	<group ns="yumi">
+		<node required="true" name="yumi_gripper" pkg="yumi_hw" type="yumi_gripper_node" respawn="false" output="screen">
+			<param name="ip" value="$(arg robot_ip)"/>
+		</node>
+		<node pkg="topic_tools" type="relay" name="gripper_joints_relay" args="/yumi/gripper_states /joint_states"/>
+	</group>
 
 
 

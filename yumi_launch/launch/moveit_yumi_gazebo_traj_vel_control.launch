@@ -4,6 +4,7 @@
 	<arg name="name" default="yumi" doc="The robot name. Ensure this is the same name you give to the arm in the urdf instance."/>
 	<arg name="use_joy" default="true"/>
 	<arg name="rviz" default="true"/>
+	<arg name="line" default="false"/>
 
 	<!-- Load joint controller configurations from YAML file to parameter server -->
 	<rosparam file="$(find yumi_control)/config/traj_controllers.yaml" command="load" ns="/yumi"/>
@@ -46,7 +47,7 @@
 
 	<!-- Call Gazebo -->
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
-		<arg name="world_name" value="$(find yumi_launch)/worlds/line.world"/>
+		<arg name="world_name" value="$(find yumi_launch)/worlds/line.world" if="$(arg line)"/>
 	    <arg name="paused" value="true"/>
 	    <arg name="use_sim_time" value="true"/>
 	    <arg name="gui" value="true"/>
@@ -89,7 +90,7 @@
 
 		<!-- controller config -->
 		<param name="moveit_controller_manager" value="moveit_simple_controller_manager/MoveItSimpleControllerManager"/>
-		<rosparam file="$(find yumi_moveit_config)/config/controllers.yaml"/>
+		<rosparam file="$(find yumi_moveit_config)/config/gazebo_controllers.yaml"/>
 
 		<!-- planning config -->
 		<param name="planning_plugin" value="ompl_interface/OMPLPlanner" />

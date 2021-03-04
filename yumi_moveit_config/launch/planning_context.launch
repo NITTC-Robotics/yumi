@@ -5,8 +5,16 @@
   <!-- The name of the parameter under which the URDF is loaded -->
   <arg name="robot_description" default="robot_description"/>
 
+	<!--  Hardware interfaces for the joints and grippers -->    
+  <arg name="arms_hardware_interface" default="VelocityJointInterface"/>
+  <arg name="grippers_hardware_interface" default="EffortJointInterface"/>
+
+  <!-- URDF / SRDF parameters -->
+  <arg name="yumi_setup" default="default"/>
+  <param if="$(arg load_robot_description)" name="$(arg robot_description)"  command="$(find xacro)/xacro.py '$(find yumi_description)/urdf/yumi.urdf.xacro' arms_interface:=$(arg arms_hardware_interface) grippers_interface:=$(arg grippers_hardware_interface) yumi_setup:=$(arg yumi_setup)" />
+  
   <!-- Load universal robot description format (URDF) -->
-  <param if="$(arg load_robot_description)" name="$(arg robot_description)" textfile="$(find yumi_description)/urdf/yumi.urdf"/>
+  <!-- <param if="$(arg load_robot_description)" name="$(arg robot_description)" textfile="$(find yumi_description)/urdf/yumi.urdf"/> -->
 
   <!-- The semantic description that corresponds to the URDF -->
   <param name="$(arg robot_description)_semantic" textfile="$(find yumi_moveit_config)/config/yumi.srdf" />
